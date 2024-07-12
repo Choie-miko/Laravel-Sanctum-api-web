@@ -24,4 +24,8 @@ Route::middleware('auth')->group(function () {
     // Comments routes
     Route::get('/dashboard/comments', [WebCommentController::class, 'index'])->name('comments.index');
     Route::post('/dashboard/comments', [WebCommentController::class, 'store'])->name('comments.store');
+    Route::get('/comments/{comment}/edit', [WebCommentController::class, 'edit'])->name('comments.edit');
+    Route::delete('/comments/{comment}', [WebCommentController::class, 'destroy'])->name('comments.destroy');
+    Route::put('/comments/{comment}', [WebCommentController::class, 'update'])->name('comments.update');
+
 });
